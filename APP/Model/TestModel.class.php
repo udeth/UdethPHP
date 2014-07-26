@@ -1,7 +1,9 @@
 <?php
-	class testModel{
+	class TestModel extends Model{
 		function get(){
-			return "hello world";
+			$sql = "SELECT * FROM `think_report`";
+			$res = $this->Mysql->getAll($sql);
+			return $res;
 		}
 	}
 ?>

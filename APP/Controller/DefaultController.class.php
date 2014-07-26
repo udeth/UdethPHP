@@ -1,9 +1,14 @@
 <?php
 
-class DefaultController{
+class DefaultController extends Controller{
 	function index(){
-		echo date("Y-m-d H:i:s");
+		
+		/*$sql = "SELECT * FROM `think_report`";
+		$res = $this->Mysql->getAll($sql);*/
+		$test = M('Test');
+		$data = $test->get();
+		$this->Smarty->assign("data", $data);
+		$this->Smarty->display("index.tpl");
 	}
 }
-
 ?>
